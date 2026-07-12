@@ -123,15 +123,29 @@ http://localhost:8501
 
 ## 📸 Screenshots
 
-Add screenshots here after project completion.
+### Dashboard
 
-Example:
+![Dashboard](screenshots/dashboard_home.png)
 
-- Dashboard
-- Quality Score
-- AI Review
-- Code Fix
-- Test Generation
+### Quality Score
+
+![Quality Score](screenshots/quality_score.png)
+
+### AI Review
+
+![AI Review](screenshots/ai_review.png)
+
+### Fix Code
+
+![Fix Code](screenshots/fix_code.png)
+
+### Explain Code
+
+![Explain Code](screenshots/explain_code.png)
+
+### Generate Tests
+
+![Generate Tests](screenshots/generate_tests.png)
 
 ---
 
