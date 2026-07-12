@@ -125,27 +125,28 @@ http://localhost:8501
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard_home.png)
+![Dashboard](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 4.57.48 PM.png
+/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 4.58.11 PM.png)
 
 ### Quality Score
 
-![Quality Score](screenshots/quality_score.png)
+![Quality Score](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 5.00.29 PM.png)
 
 ### AI Review
 
-![AI Review](screenshots/ai_review.png)
+![AI Review](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 5.00.46 PM.png)
 
 ### Fix Code
 
-![Fix Code](screenshots/fix_code.png)
+![Fix Code](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 5.00.59 PM.png)
 
 ### Explain Code
 
-![Explain Code](screenshots/explain_code.png)
+![Explain Code](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 5.01.17 PM.png)
 
 ### Generate Tests
 
-![Generate Tests](screenshots/generate_tests.png)
+![Generate Tests](/Users/harshwardhansingh/Desktop/Screenshot 2026-07-12 at 5.01.29 PM.png)
 
 ---
 
