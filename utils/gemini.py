@@ -18,7 +18,7 @@ class GeminiError(Exception):
     pass
 
 
-def ask_gemini(prompt: str) -> str:
+def ask_gemini(prompt: str):
     """
     Keeping the same function name so the rest of the project
     doesn't need any changes.

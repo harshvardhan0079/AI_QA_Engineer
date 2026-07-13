@@ -198,12 +198,12 @@ Analyze • Review • Fix • Explain • Generate Tests
 # DASHBOARD STATS
 # --------------------------------------------------
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
     st.metric(
         "🤖 AI Modules",
-        "5",
+        "6",
         delta="Active"
     )
 
@@ -229,7 +229,7 @@ with col4:
     )
 
 st.info(
-    "🚀 Upload a Python file or paste your code below. The AI can analyze quality, review code, fix issues, explain logic, and generate pytest test cases."
+    "🚀 Upload a Python file or paste your code below. The AI can analyze quality, detect bugs, review code, fix issues, explain logic, and generate pytest test cases."
 )
 # --------------------------------------------------
 # FILE UPLOAD
@@ -379,12 +379,13 @@ if code.strip():
 # TABS
 # --------------------------------------------------
 st.markdown("## 🚀 AI Tools")
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "📊 Quality Score",
     "📝 AI Review",
     "🛠 Fix Code",
     "💡 Explain",
-    "🧪 Tests"
+    "🧪 Tests",
+    "🐞 Bug Detector"
 ])
 
 with tab1:
@@ -802,6 +803,62 @@ with tab5:
             else:
 
                 st.error(response.text) 
+with tab6:
+
+    st.subheader("🐞 Bug Detector")
+
+    if st.button("🔍 Scan Bugs"):
+
+        response = requests.post(
+            f"{API}/scan-bugs",
+            json={"prompt": code}
+        )
+
+        if response.status_code == 200:
+
+            data = response.json()
+
+            if "error" not in data:
+
+                st.metric("🐞 Bugs Found", data["total"])
+
+                c1, c2, c3 = st.columns(3)
+
+                c1.metric("🔴 Critical", data["critical"])
+                c2.metric("🟠 Medium", data["medium"])
+                c3.metric("🟢 Minor", data["minor"])
+
+                st.session_state["bugs_scanned"] = True
+
+            else:
+
+                st.error(data["error"])
+
+    if st.session_state.get("bugs_scanned"):
+
+        if st.button("🔧 Fix All Bugs"):
+
+            response = requests.post(
+                f"{API}/fix-code",
+                json={"code": code}
+            )
+
+            if response.status_code == 200:
+
+                fixed = response.json()
+
+                st.success("✅ Bugs Fixed Successfully")
+
+                st.code(
+                    fixed["fixed_code"],
+                    language="python"
+                )
+
+                st.download_button(
+                    "⬇ Download Fixed Code",
+                    fixed["fixed_code"],
+                    file_name="fixed_code.py"
+                )                 
 
 st.markdown("---")
 

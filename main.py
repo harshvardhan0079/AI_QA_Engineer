@@ -7,7 +7,7 @@ from routers.fix import router as fix_router
 from routers.explain import router as explain_router
 from routers.tests import router as tests_router
 from routers.history import router as history_router
-
+from routers.bugs import router as bugs_router
 app = FastAPI(
     title="AI QA Engineer",
     description="Production Grade AI QA Platform",
@@ -28,7 +28,7 @@ app.include_router(fix_router)
 app.include_router(explain_router)
 app.include_router(tests_router)
 app.include_router(history_router)
-
+app.include_router(bugs_router)
 
 @app.get("/")
 def home():
