@@ -33,7 +33,7 @@ with st.sidebar:
     st.write("🛠 Fix Code")
     st.write("💡 Explain Code")
     st.write("🧪 Generate Tests")
-
+    st.write("🐞 Bug Detector" )
     st.markdown("---")
 
     st.info(
